@@ -13,6 +13,6 @@ DATADIR="$( jq -r '.DIR' "config.conf" )"
 $DATADIR/stop.sh
 echo -e "Starting Nodeos \n";
 
-$NODEOSBINDIR/nodeos  --delete-all-blocks --genesis-json $DATADIR/genesis.json --data-dir $DATADIR --config-dir $DATADIR > $DATADIR/stdout.txt 2> $DATADIR/stderr.txt &  echo $! > $DATADIR/nodeos.pid
-#$NODEOSBINDIR/nodeos --replay-blockchain --contracts-console --data-dir $DATADIR --config-dir $DATADIR > $DATADIR/stdout.txt 2> $DATADIR/stderr.txt &  echo $! > $DATADIR/nodeos.pid 
-#$NODEOSBINDIR/nodeos  --contracts-console $DATADIR/genesis.json --data-dir $DATADIR --config-dir $DATADIR > $DATADIR/stdout.txt 2> $DATADIR/stderr.txt &  echo $! > $DATADIR/nodeos.pid
+$NODEOSBINDIR/nodeos  --delete-all-blocks --config-dir $DATADIR > $DATADIR/stdout.txt 2> $DATADIR/stderr.txt &  echo $! > $DATADIR/nodeos.pid
+#$NODEOSBINDIR/nodeos --replay-blockchain --contracts-console --config-dir $DATADIR > $DATADIR/stdout.txt 2> $DATADIR/stderr.txt &  echo $! > $DATADIR/nodeos.pid 
+#$NODEOSBINDIR/nodeos  --contracts-console --config-dir $DATADIR > $DATADIR/stdout.txt 2> $DATADIR/stderr.txt &  echo $! > $DATADIR/nodeos.pid
